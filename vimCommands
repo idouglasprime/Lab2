@@ -1,0 +1,53 @@
+VI EDITOR GUIDE (Based off Command mode, press ESC while in insert mode)
+
+1. Getting help on a specific command:
+	~ Go to command mode, :help "name of command"
+	~ :q to exit
+	
+2. Home row keys for navigation:
+	~ h (moves the cursor one character to the left)
+	~ j (moves the cursor down one line)
+	~ k (moves the cursor up one line)
+	~ l (moves the cursor one character to the right)
+
+3. Insertion:
+	~ o (to insert a new line under the cursor)
+	~ O (to insert a new line above the cursor) 
+
+4. Appending:
+	~ a (following cursor's current position)
+	~ A (at the end of the cursor's current line)
+
+5. Substitution:
+		~ conducts a search on the current line
+		~ g means that all occurances are replaced
+	~ R (to replace one character)
+	~ :%s/"searchterm"/"replacementTerm"/g (to replace all occurances in a file)
+		~end with gc instead of g to create a confirmation check with each replacement	
+
+6. Undoing the last command:
+	~ Exit to command mode (ESC), then :u
+
+7. Dropping into a command line:
+	 ~ Exit to command mode (ESC)
+
+8. Range-based deletion and substitution:
+	 ~ :rangestart,rangefinish s/"searchterm"/"replacementTerm"/g
+
+9. Finding a character or string in a document:
+	~ Exit (ESC) insert mode to command mode
+	~ :/"insert search term/string here" (to search forward)
+	~ :?"insert search term/string here" (to search backward)
+	~ Press n to navigate down occurances, N to navigate up
+	~ Line # and character occupancy can be found in the bottom left corner
+
+10. Four ways of quitting a document (Go to Command mode first)
+	Saving and quitting (2):
+		~ :wq
+		~ :x
+	Just quitting: 
+		~ :q
+	Writing a new file:
+		~ wq "file name"
+11. Running a shell command from the editor:
+	~ Go to command mode, :! "unix shell command here"
